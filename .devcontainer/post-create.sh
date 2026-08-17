@@ -7,6 +7,7 @@ python -m venv .venv
 
 mkdir -p "$HOME/.local"
 npm install --global --prefix "$HOME/.local" @openai/codex@0.147.0
+sudo ln -sf "$HOME/.local/bin/codex" /usr/local/bin/codex
 
 .venv/bin/python -m ipykernel install \
   --user \

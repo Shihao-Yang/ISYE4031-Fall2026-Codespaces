@@ -1,0 +1,61 @@
+# ISYE 4031: Regression and Forecasting
+
+This is the standard browser-based computing environment for ISYE 4031 in Fall 2026. It includes Python, Jupyter, the course analysis packages, GitHub CLI, and Codex CLI. You do not need to install the course software on your own computer.
+
+[Open in GitHub Codespaces](https://codespaces.new/Shihao-Yang/ISYE4031-Fall2026-Codespaces?quickstart=1)
+
+## First launch
+
+1. Select **Open in GitHub Codespaces** above.
+2. Keep the default 2-core machine and choose **Create codespace**.
+3. Wait until the terminal reports `ISYE 4031 setup is complete.`
+4. In the terminal, run:
+
+   ```bash
+   codex login --device-auth
+   ```
+
+5. Open the displayed link, enter the one-time code, and sign in with the account authorized for the course.
+6. Back in the terminal, verify the environment:
+
+   ```bash
+   codex login status
+   python scripts/check_environment.py
+   pytest -q
+   ```
+
+7. Start Codex from the repository root:
+
+   ```bash
+   codex
+   ```
+
+Authentication belongs to you. Never commit or share API keys, login tokens, `.env` files, or files under `~/.codex`. You may need to authenticate again after deleting or rebuilding a codespace.
+
+## First lab
+
+Begin with [`labs/00_getting_started`](labs/00_getting_started/README.md). Every agent-assisted analysis follows the same pattern:
+
+1. **Baseline:** produce a simple result you understand.
+2. **Agent:** ask Codex to improve, extend, or explain the analysis.
+3. **Audit:** test the code, check assumptions and leakage, and explain which output you accepted or rejected.
+
+The statistical ideas remain central. AI-generated output is a proposal to verify, not evidence that the analysis is correct.
+
+## Saving work and controlling usage
+
+- Commit and push your work before deleting a codespace.
+- Stop the codespace when you finish. GitHub also stops it after the configured idle period.
+- Use one 2-core codespace unless the instructor says otherwise.
+- Do not put restricted course material, student records, or private data in prompts or repositories.
+
+## Troubleshooting
+
+- If `codex` is not found, run `bash .devcontainer/post-create.sh` once.
+- If Python imports fail, select the `Python (ISYE 4031)` notebook kernel or run `source .venv/bin/activate`.
+- Check login state with `codex login status`; clear it with `codex logout`.
+- If setup still fails, copy the complete terminal error into the course help channel. Do not include credentials.
+
+## Local installation
+
+Codespaces is the supported classroom environment. Students who independently install the tools locally may do so, but should notify the instructor and remain able to reproduce submitted work in the course Codespace.

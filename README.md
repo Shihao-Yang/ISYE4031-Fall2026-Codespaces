@@ -2,12 +2,10 @@
 
 This is the standard browser-based computing environment for ISYE 4031 in Fall 2026. It includes Python, Jupyter, the course analysis packages, GitHub CLI, and Codex CLI. You do not need to install the course software on your own computer.
 
-[Open in GitHub Codespaces](https://codespaces.new/Shihao-Yang/ISYE4031-Fall2026-Codespaces?quickstart=1)
-
 ## First launch
 
-1. Select **Open in GitHub Codespaces** above.
-2. Keep the default 2-core machine and choose **Create codespace**.
+1. Open your individual course repository on GitHub.
+2. Select **Code**, select **Codespaces**, and choose **Create codespace on main**. Keep the default 2-core machine.
 3. Wait until the terminal reports `ISYE 4031 setup is complete.`
 4. In the terminal, run:
 

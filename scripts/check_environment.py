@@ -33,11 +33,12 @@ def main() -> int:
         version = getattr(module, "__version__", "installed")
         print(f"{package}: {version}")
 
-    codex = shutil.which("codex")
-    if codex:
-        print(f"codex: {codex}")
-    else:
-        failures.append("codex: command not found on PATH")
+    for command in ("codex", "agy"):
+        executable = shutil.which(command)
+        if executable:
+            print(f"{command}: {executable}")
+        else:
+            failures.append(f"{command}: command not found on PATH")
 
     if failures:
         print("\nEnvironment check failed:", file=sys.stderr)

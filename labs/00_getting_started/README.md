@@ -20,7 +20,7 @@ Before using an agent, answer these questions in your notes:
 
 ## 2. Agent
 
-Start `codex` in the repository root. Ask it to inspect the supplied analysis and propose one meaningful improvement. A useful first prompt is:
+Start `agy` or `codex` in the repository root. Ask the agent to inspect the supplied analysis and propose one meaningful improvement. A useful first prompt is:
 
 > Inspect Lab 00 and explain the two baselines. Propose one additional diagnostic or model that preserves the chronological split. Do not edit files yet. Identify any leakage risk and say how we should test the change.
 

@@ -1,30 +1,29 @@
 # ISYE 4031: Regression and Forecasting
 
-This is the standard browser-based computing environment for ISYE 4031 in Fall 2026. It includes Python, Jupyter, the course analysis packages, GitHub CLI, and Codex CLI. You do not need to install the course software on your own computer.
+This is the standard browser-based computing environment for ISYE 4031 in Fall 2026. It includes Python, Jupyter, the course analysis packages, GitHub CLI, Codex CLI, and Google Antigravity CLI. You do not need to install the course software on your own computer.
 
 ## First launch
 
 1. Open your individual course repository on GitHub.
 2. Select **Code**, select **Codespaces**, and choose **Create codespace on main**. Keep the default 2-core machine.
 3. Wait until the terminal reports `ISYE 4031 setup is complete.`
-4. In the terminal, run:
+4. Choose and authenticate at least one agent:
+
+   - **Google Antigravity:** Run `agy`, select **Google OAuth**, open the displayed browser link, and complete the login. Google's current Antigravity CLI instructions specify a personal Gmail account. If your Georgia Tech account is rejected, use a personal Gmail account or use Codex instead.
+   - **Codex:** Run `codex login --device-auth`, open the displayed link, enter the one-time code, and sign in with the account authorized for the course.
+
+5. Back in the terminal, verify the environment:
 
    ```bash
-   codex login --device-auth
-   ```
-
-5. Open the displayed link, enter the one-time code, and sign in with the account authorized for the course.
-6. Back in the terminal, verify the environment:
-
-   ```bash
-   codex login status
    python scripts/check_environment.py
    pytest -q
    ```
 
-7. Start Codex from the repository root:
+6. Start either agent from the repository root:
 
    ```bash
+   agy
+   # or
    codex
    ```
 
@@ -49,9 +48,10 @@ The statistical ideas remain central. AI-generated output is a proposal to verif
 
 ## Troubleshooting
 
-- If `codex` is not found, run `bash .devcontainer/post-create.sh` once.
+- If `codex` or `agy` is not found, run `bash .devcontainer/post-create.sh` once.
 - If Python imports fail, select the `Python (ISYE 4031)` notebook kernel or run `source .venv/bin/activate`.
 - Check login state with `codex login status`; clear it with `codex logout`.
+- Antigravity prompts for Google OAuth the first time you run `agy`.
 - If setup still fails, copy the complete terminal error into the course help channel. Do not include credentials.
 
 ## Local installation
